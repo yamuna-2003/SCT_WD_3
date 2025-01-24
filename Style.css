@@ -1,0 +1,182 @@
+/* Reset and basic styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #12898eb8, #de911eb0);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-attachment: fixed;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Logo and header */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  animation: slideDown 1.2s ease-in-out;
+}
+
+.logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header h2 {
+  margin-left: 15px;
+  font-family: 'Fauna One', serif;
+  font-size: 16px; 
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Task heading */
+h2, h3 {
+  font-family: Copperplate, Papyrus, fantasy;
+  margin-bottom: 10px;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+h2 {
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+h3 {
+  font-style: italic;
+  color: #dce3f7;
+}
+
+/* Game status */
+#game-status {
+  margin: 15px 0;
+  font: italic small-caps bold 16px/2 cursive;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+  animation: popIn 1.2s ease-in-out;
+}
+
+/* Board styling */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  margin: 15px 0;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0092b7b7;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.square:hover {
+  background-color: rgba(224, 249, 251, 0.952);
+  transform: scale(1.1);
+}
+
+.square:focus {
+  outline: none;
+}
+
+/* Restart button */
+#restart-btn {
+  padding: 10px 15px;
+  margin-top: 10px;
+  font-family: "Audiowide", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  animation: bounceIn 1.5s ease-in-out;
+}
+
+#restart-btn:hover {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  transform: scale(1.1);
+}
+
+#restart-btn:focus {
+  outline: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
